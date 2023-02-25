@@ -27,9 +27,12 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
 
 ```mermaid
  gantt
+  dateFormat  MM-DD
   title  Organización del proyecto La Porra de Twitter F1
+  section Investigación
   Lluvia de ideas :a, 2022-02-09, 1d
   Investigación :b, 2022-02-09, 3d
   Reglas :c, 2022-02-10, 1d
-  Código :d, 2022-02-10, 5d
+  section Codificación
+  Inicio de sesión :d, 2022-02-10, 5d
 ```
