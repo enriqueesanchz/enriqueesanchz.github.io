@@ -6,14 +6,13 @@ tags: [web, f1, twitter, viral]     # TAG names should always be lowercase
 mermaid: true
 ---
 
-<div style="text-align: justify; text-justify: inter-word">
-
 Esta es la historia de cómo llegamos a tener una web de Fórmula 1 con más de 400 usuarios hecha en tan solo 10 días.
 
 ## El comienzo
 
+<div style="text-align: justify; text-justify: inter-word">
 Durante el auge del fenómeno EL PLAN en Twitter, allá por Febrero de 2022, @manueljerez7_ y yo tuvimos la idea de crear una web a modo de porra para un conjunto reducido de amigos.
-Aprovechamos que él tenía un grupo con otros usuarios de Twitter F1 que se reunían usando la herramienta Twitter Spaces para comentarles la idea. Les encantó, por lo que decidimos poner un Tweet para ver si a más gente le gustaba. El resultado fue el siguiente, se viralizó.
+Aprovechamos que él tenía un grupo con otros usuarios de Twitter F1 que se reunían usando la herramienta Twitter Spaces para comentarles la idea. Les encantó, por lo que decidimos poner un Tweet para ver si a más gente le gustaba. Se viralizó.
 
 <blockquote class="twitter-tweet"><p lang="es" dir="ltr">CHAVALES este año se viene a TwF1 un super UPGRADE:<br>UNA WEB SENCILLA para hacer LA PORRA DE LA CARRERA<br>Te registras con tu usuario de Twitter, metes resultados y ves la clasificación general de puntos<br><br>Pronto os diré más 👀👀👀<br>Se agradece difusión para llegar a más gente 🙏</p>&mdash; Manu 😉 (@manueljerez7_) <a href="https://twitter.com/manueljerez7_/status/1492115818951417859?ref_src=twsrc%5Etfw">February 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
@@ -40,11 +39,11 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
   Despliegue :e, 2022-02-10, 2d
   
   section Implementación
-  Diseño arquitectura :f, 2022-02-11, 1d
+  Diseño :f, 2022-02-09, 4d
   Inicio de sesión :d, after f, 2d
   Juego :g, after f, 3d
   
   section Optimización
-  BBDD: h, 2022-02-15, 2d
-  Servidor: i, 2022-02-17, 2d
+  BBDD: h, 2022-02-16, 3d
+  Servidor: i, 2022-02-16, 3d
 ```
