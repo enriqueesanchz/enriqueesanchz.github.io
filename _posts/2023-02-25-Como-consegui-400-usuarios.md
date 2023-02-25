@@ -30,10 +30,21 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
   dateFormat  YYYY-MM-DD
   axisFormat %m-%d
   title  Organización del proyecto La Porra de Twitter F1
+  
+  section Reglas
+  Lluvia de ideas :a, 2022-02-09, 2d
+  Formalización :b, after a, 2d
+  
   section Investigación
-  Lluvia de ideas :a, 2022-02-09, 1d
-  Investigación :b, 2022-02-09, 3d
-  Reglas :c, 2022-02-10, 1d
-  section Codificación
-  Inicio de sesión :d, 2022-02-10, 5d
+  BBDD :c, 2022-02-09, 2d
+  Despliegue :e, 2022-02-10, 2d
+  
+  section Implementación
+  Diseño arquitectura :f, 2022-02-11, 1d
+  Inicio de sesión :d, after f, 2d
+  Juego :g, after f, 3d
+  
+  section Optimización
+  BBDD: h, 2022-02-15, 2d
+  Servidor: i, 2022-02-17, 2d
 ```
