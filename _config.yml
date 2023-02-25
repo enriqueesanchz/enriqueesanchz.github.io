@@ -23,10 +23,10 @@ timezone: mainland
 
 title: Enrique Sánchez                          # the main title
 
-tagline: Ingeniero telecomunicaciones   # it will display as the sub-title
+tagline: Ingeniero Telecomunicaciones   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Enrique Sánchez, blog de un Ingeniero telecomunicaciones
+  Enrique Sánchez, blog de un Ingeniero Telecomunicaciones
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://enriqueesanchz.github.io'
