@@ -9,7 +9,6 @@ mermaid: true
 Esta es la historia de cómo llegamos a tener una web de Fórmula 1 con más de 400 usuarios hecha en tan solo 10 días.
 
 ## El comienzo
-
 <div style="text-align: justify; text-justify: inter-word">
 Durante el auge del fenómeno EL PLAN en Twitter, allá por Febrero de 2022, @manueljerez7_ y yo tuvimos la idea de crear una web a modo de porra para un conjunto reducido de amigos.
 Aprovechamos que él tenía un grupo con otros usuarios de Twitter F1 que se reunían usando la herramienta Twitter Spaces para comentarles la idea. Les encantó, por lo que decidimos poner un Tweet para ver si a más gente le gustaba. Se viralizó.
@@ -21,7 +20,6 @@ Aprovechamos que él tenía un grupo con otros usuarios de Twitter F1 que se reu
 </div>
 
 ## Cómo nos organizamos
-
 Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Universidad de Sevilla, por lo que teníamos que organizar el poco tiempo sobrante que teníamos para llevar a cabo este proyecto.
 
 ```mermaid
@@ -39,7 +37,7 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
   Despliegue :e, 2022-02-10, 2d
   
   section Implementación
-  Diseño :f, 2022-02-09, 4d
+  Diseño :f, 2022-02-10, 2d
   Inicio de sesión :d, after f, 2d
   Juego :g, after f, 3d
   
@@ -51,30 +49,41 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
 ## Ideas clave
 De la fase de lluvia de ideas sacamos varias claves:
 
-#### - Inicio de sesión usando API Twitter
-
+### - Inicio de sesión usando API Twitter
 Es muy importante eliminar las barreras de entrada que pueda tener un usuario. Puesto que nuestra publicidad era Twitter, el registro en nuestra web se hará mediante su API. El usuario únicamente tendrá que dar acceso a su nombre de cuenta en Twitter y su @ será su usuario en la web.
 Desde mi punto de vista, esto fue un completo acierto ya que el pulsar un botón de inicio de sesión con Twitter hace que el registro se vuelva automático y nada pesado.
 
-#### - Botón compartir en Twitter estilo Wordle
-
+### - Botón compartir en Twitter estilo Wordle
 Wordle se había viralizado ya que la gente podía hacer el reto diario y compartir su famoso código de colores en Twitter, por lo que nosotros inventamos el nuestro propio.
 Esto nos ayuda a llegar a un mayor público.
 
-#### - Reglas
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Mis resultados de <a href="https://twitter.com/hashtag/LaPorraDeTwF1?src=hash&amp;ref_src=twsrc%5Etfw">#LaPorraDeTwF1</a> para Bahrain<br>🟩 🟥<br>🟨 🟨<br>🟩 🟨<br>🟥 🟥<br>🟥 🟥</p>&mdash; Enrique Sánchez (@enriqueesanchz) <a href="https://twitter.com/enriqueesanchz/status/1505610789796917250?ref_src=twsrc%5Etfw">March 20, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
+### - Reglas
 Las reglas se debatieron durante los primeros días para su posterior formalización. Básicamente consiste en colocar a los pilotos que creas que van a quedar los 10 primeros y según los resultados se te asigna una puntuación dependiendo de lo cerca que hayas estado de acertar.
 
 ## Investigación
 Esta era una parte importante para decidir qué servicios íbamos a usar tanto para la Base de Datos como para dónde desplegar la Web, siempre intentando minimizar costes, ya que éramos estudiantes sin fuente de ingresos.
 
-#### - BBDD
-
+### - BBDD
 Para la Base de Datos teníamos las posibilidades de Google Cloud SQL, Firebase, Azure SQL, AWS SQL Server, etc. Terminamos decantándonos por Azure ya que por $5 teníamos 2Gb de almacenamiento, costeándolo durante la temporada de Fórmula 1 con el plan para estudiantes.
 
-#### - Servidor
-
+### - Servidor
 Otra parte vital es dónde desplegar la Web. Entre las diferentes opciones estaban de nuevo las plataformas de Google, Azure, AWS, etc. Al final elegimos Heroku con su plan gratuito ya que teníamos experiencia previa. Cabe recalcar que teníamos algo de miedo por la viralización del Tweet y porque el número de usuarios que podríamos tener quizás hacía que la web cayese.
 
 ## Implementación
+
+### - Diseño
+En esta parte ideamos cómo iban a ser los diferentes componentes de nuestra arquitectura, sus relaciones y dependencias, etc.
+
+### - Inicio de sesión
+
+### - Juego
+
+## Optimización
+
+### - BBDD
+
+### - Servidor
+
 
