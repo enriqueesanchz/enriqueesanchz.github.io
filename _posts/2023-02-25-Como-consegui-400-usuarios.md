@@ -6,7 +6,7 @@ tags: [web, f1, twitter, viral]     # TAG names should always be lowercase
 mermaid: true
 ---
 
-Esta es la historia de cómo llegamos a tener una web de Fórmula 1 con más de 400 usuarios hecha en tan solo 10 días.
+Esta es la historia de cómo llegamos a tener una web de Fórmula 1 con más de 400 usuarios hecha en tan solo 7 días.
 
 ## El comienzo
 <div style="text-align: justify; text-justify: inter-word">
@@ -42,8 +42,8 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
   Juego :g, after f, 3d
   
   section Optimización
-  BBDD: h, 2022-02-16, 3d
-  Servidor: i, 2022-02-16, 3d
+  BBDD: h, 2022-02-15, 3d
+  Servidor: i, 2022-02-15, 3d
 ```
 
 ## Ideas clave
@@ -69,21 +69,18 @@ Esta era una parte importante para decidir qué servicios íbamos a usar tanto p
 Para la Base de Datos teníamos las posibilidades de Google Cloud SQL, Firebase, Azure SQL, AWS SQL Server, etc. Terminamos decantándonos por Azure ya que por $5 teníamos 2Gb de almacenamiento, costeándolo durante la temporada de Fórmula 1 con el plan para estudiantes.
 
 ### - Servidor
-Otra parte vital es dónde desplegar la Web. Entre las diferentes opciones estaban de nuevo las plataformas de Google, Azure, AWS, etc. Al final elegimos Heroku con su plan gratuito ya que teníamos experiencia previa. Cabe recalcar que teníamos algo de miedo por la viralización del Tweet y porque el número de usuarios que podríamos tener quizás hacía que la web cayese.
+Otra parte vital es dónde desplegar la Web. Entre las diferentes opciones estaban de nuevo las plataformas de Google, Azure, AWS, etc. Al final elegimos Heroku con su plan gratuito ya que teníamos experiencia previa, Python y Flask. Cabe recalcar que teníamos algo de miedo por la viralización del Tweet y porque el número de usuarios que podríamos tener quizás hacía que la web cayese.
 
 ## Implementación
-
-### - Diseño
 En esta parte ideamos cómo iban a ser los diferentes componentes de nuestra arquitectura, sus relaciones y dependencias, etc.
-
-### - Inicio de sesión
-
-### - Juego
+Comprende desde la implementación del inicio de sesión con Twitter para la web hasta la implementación del las reglas de la Porra en la Aplicación Web.
 
 ## Optimización
+Durante estos días, estuve investigando sobre cómo optimizar al máximo nuestra web, en qué partes podíamos usar caché y en cuáles no, y otras optimizaciones de cara al servidor Web a usar, el número de hilos, etc. Estábamos preocupados por la viralización en Twitter.
 
-### - BBDD
-
-### - Servidor
+## Conclusión
+Se trata de una App Web sencilla, simple, hecha en tiempo récord, que cumple su función: Tener una porra a golpe de click desde Twitter, ideada para la comunidad de Twitter Fórmula 1.
+Terminamos teniendo más de 400 usuarios, muy contentos, aunque sabemos que podrían haber sido más. Esto se debe a que la dificultad de conseguir un Tweet viral creció para cuando se iba a iniciar la temporada de F1 por lo que aunque con el Tweet del primer anuncio llegásemos a 90 mil visualizaciones, los que pusimos en las vísperas del primer Gran Premio obtuvieron muchas menos debido a la cantidad de información y tweets que hubo en aquella época.
+Personalmente, considero todo un éxito este proyecto, en el cual he aprendido mucho con un ejemplo del mundo real.
 
 
