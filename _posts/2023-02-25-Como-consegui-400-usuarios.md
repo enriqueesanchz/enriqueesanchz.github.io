@@ -5,6 +5,9 @@ categories: [Web, Twitter]
 tags: [web, f1, twitter, viral]     # TAG names should always be lowercase
 mermaid: true
 ---
+<style type="text/css">
+ .post-content { text-align: justify; }
+</style>
 
 Esta es la historia de cómo llegamos a tener una web de Fórmula 1 con más de 400 usuarios hecha en tan solo 7 días.
 
@@ -97,10 +100,9 @@ Durante estos días, estuve investigando sobre cómo optimizar al máximo nuestr
 </div>
 
 ## Conclusión
-<div style="text-align: justify; text-justify: inter-word">
 Se trata de una App Web sencilla, simple, hecha en tiempo récord, que cumple su función: Tener una porra a golpe de click desde Twitter, ideada para la comunidad de Twitter Fórmula 1.
 
 Terminamos teniendo más de 400 usuarios, muy contentos, aunque sabemos que podrían haber sido más. Esto se debe a que la dificultad de conseguir un Tweet viral creció para cuando se iba a iniciar la temporada de F1 por lo que aunque con el Tweet del primer anuncio llegásemos a 90 mil visualizaciones, los que pusimos en las vísperas del primer Gran Premio obtuvieron muchas menos debido a la cantidad de información y tweets que hubo en aquella época.
 
 Personalmente, considero todo un éxito este proyecto, en el cual he aprendido mucho con un ejemplo del mundo real y creo que la clave ha estado en centrarnos en la comodidad del usuario y la compartición en Twitter de los resultados con el código de colores.
-</div>
+
