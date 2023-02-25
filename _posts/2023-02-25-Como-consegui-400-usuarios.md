@@ -85,3 +85,7 @@ Terminamos teniendo más de 400 usuarios, muy contentos, aunque sabemos que podr
 
 Personalmente, considero todo un éxito este proyecto, en el cual he aprendido mucho con un ejemplo del mundo real y creo que la clave ha estado en centrarnos en la comodidad del usuario y la compartición en Twitter de los resultados con el código de colores.
 
+### Leer más
+- Análisis de datos de usuarios La Porra de Twitter F1
+- <a href="https://manueljerez.super.site/posts/diario-de-trabajo-laporradetwf1">Diario de Manuel con el proyecto</a>
+
