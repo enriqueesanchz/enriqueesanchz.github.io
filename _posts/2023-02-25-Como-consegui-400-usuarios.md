@@ -55,9 +55,9 @@ Desde mi punto de vista, esto fue un completo acierto ya que el pulsar un botón
 
 ### - Botón compartir en Twitter estilo Wordle
 Wordle se había viralizado ya que la gente podía hacer el reto diario y compartir su famoso código de colores en Twitter, por lo que nosotros inventamos el nuestro propio.
-Esto nos ayuda a llegar a un mayor público.
+Esto nos ayuda a llegar a un mayor público. Entrando en el hastag #LaPorraDeTwF1 se pueden comprobar los Tweets de los usuarios.
 
-<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Mis resultados de <a href="https://twitter.com/hashtag/LaPorraDeTwF1?src=hash&amp;ref_src=twsrc%5Etfw">#LaPorraDeTwF1</a> para Bahrain<br>🟩 🟥<br>🟨 🟨<br>🟩 🟨<br>🟥 🟥<br>🟥 🟥</p>&mdash; Enrique Sánchez (@enriqueesanchz) <a href="https://twitter.com/enriqueesanchz/status/1505610789796917250?ref_src=twsrc%5Etfw">March 20, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Mis resultados de <a href="https://twitter.com/hashtag/LaPorraDeTwF1?src=hash&amp;ref_src=twsrc%5Etfw">#LaPorraDeTwF1</a> para Bahrain<br>🟩 🟥<br>🟨 🟨<br>🟥 🟥<br>🟥 🟥<br>🟥 🟥</p>&mdash; Enrique Sánchez (@enriqueesanchz) <a href="https://twitter.com/enriqueesanchz/status/1505610789796917250?ref_src=twsrc%5Etfw">March 20, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 ### - Reglas
 Las reglas se debatieron durante los primeros días para su posterior formalización. Básicamente consiste en colocar a los pilotos que creas que van a quedar los 10 primeros y según los resultados se te asigna una puntuación dependiendo de lo cerca que hayas estado de acertar.
@@ -80,7 +80,9 @@ Durante estos días, estuve investigando sobre cómo optimizar al máximo nuestr
 
 ## Conclusión
 Se trata de una App Web sencilla, simple, hecha en tiempo récord, que cumple su función: Tener una porra a golpe de click desde Twitter, ideada para la comunidad de Twitter Fórmula 1.
+
 Terminamos teniendo más de 400 usuarios, muy contentos, aunque sabemos que podrían haber sido más. Esto se debe a que la dificultad de conseguir un Tweet viral creció para cuando se iba a iniciar la temporada de F1 por lo que aunque con el Tweet del primer anuncio llegásemos a 90 mil visualizaciones, los que pusimos en las vísperas del primer Gran Premio obtuvieron muchas menos debido a la cantidad de información y tweets que hubo en aquella época.
-Personalmente, considero todo un éxito este proyecto, en el cual he aprendido mucho con un ejemplo del mundo real.
+
+Personalmente, considero todo un éxito este proyecto, en el cual he aprendido mucho con un ejemplo del mundo real y creo que la clave ha estado en centrarnos en la comodidad del usuario y la compartición en Twitter de los resultados con el código de colores.
 
 
