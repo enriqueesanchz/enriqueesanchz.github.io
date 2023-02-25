@@ -48,33 +48,33 @@ Ambos estábamos cursando el grado de Ingeniería Telecomunicaciones en la Unive
   Servidor: i, 2022-02-16, 3d
 ```
 
-## Ideas clave
+# Ideas clave
 De la fase de lluvia de ideas sacamos varias claves:
 
-- Inicio de sesión usando API Twitter
+## Inicio de sesión usando API Twitter
 
 Es muy importante eliminar las barreras de entrada que pueda tener un usuario. Puesto que nuestra publicidad era Twitter, el registro en nuestra web se hará mediante su API. El usuario únicamente tendrá que dar acceso a su nombre de cuenta en Twitter y su @ será su usuario en la web.
 Desde mi punto de vista, esto fue un completo acierto ya que el pulsar un botón de inicio de sesión con Twitter hace que el registro se vuelva automático y nada pesado.
 
-- Botón compartir en Twitter estilo Wordle
+## Botón compartir en Twitter estilo Wordle
 
 Wordle se había viralizado ya que la gente podía hacer el reto diario y compartir su famoso código de colores en Twitter, por lo que nosotros inventamos el nuestro propio.
 Esto nos ayuda a llegar a un mayor público.
 
-- Reglas
+## Reglas
 
 Las reglas se debatieron durante los primeros días para su posterior formalización. Básicamente consiste en colocar a los pilotos que creas que van a quedar los 10 primeros y según los resultados se te asigna una puntuación dependiendo de lo cerca que hayas estado de acertar.
 
-## Investigación
+# Investigación
 Esta era una parte importante para decidir qué servicios íbamos a usar tanto para la Base de Datos como para dónde desplegar la Web, siempre intentando minimizar costes, ya que éramos estudiantes sin fuente de ingresos.
 
-- BBDD
+## BBDD
 
 Para la Base de Datos teníamos las posibilidades de Google Cloud SQL, Firebase, Azure SQL, AWS SQL Server, etc. Terminamos decantándonos por Azure ya que por $5 teníamos 2Gb de almacenamiento, costeándolo durante la temporada de Fórmula 1 con el plan para estudiantes.
 
-- Servidor
+## Servidor
 
 Otra parte vital es dónde desplegar la Web. Entre las diferentes opciones estaban de nuevo las plataformas de Google, Azure, AWS, etc. Al final elegimos Heroku con su plan gratuito ya que teníamos experiencia previa. Cabe recalcar que teníamos algo de miedo por la viralización del Tweet y porque el número de usuarios que podríamos tener quizás hacía que la web cayese.
 
-## Implementación
+# Implementación
 
