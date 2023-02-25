@@ -1,7 +1,7 @@
 ---
 title: Cómo conseguí 400 usuarios para esta Web de F1
-date: 2022-02-22 17:30:00 +0100
-categories: [Web, Twitter]
+date: 2023-02-22 17:30:00 +0100
+categories: [Web, F1]
 tags: [web, f1, twitter, viral]     # TAG names should always be lowercase
 mermaid: true
 ---
