@@ -4,5 +4,4 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+Hi! I'm Enrique, a 23 years old Telecommunications Engineer. This is my personal blog where I wrote from time to time about tecnical projects.
