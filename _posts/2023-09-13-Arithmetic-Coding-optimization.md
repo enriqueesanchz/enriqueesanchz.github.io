@@ -59,7 +59,9 @@ De esta manera las variables en hexadecimal serían así:
 Nunca llegamos al 1 inicial en low ni al 0 inicial en high. Para solucionar esto descartaremos el segundo bit más significativo (lo apuntamos en la cuenta de bits descartados) teniendo en cuenta que en algún momento se cumplirá la condición de 0.5. Cuando esto suceda, emitimos el bit correspondiente y los siguientes serán el contrario (tantos como apuntamos en la cuenta).
 
 ## Rust 
-En mi repositorio de github se encuentra la [implementación en Rust](https://github.com/enriqueesanchz/arithmetic-coding) de este algoritmo. El ejemplo comprime "El Quijote" usando un modelo simple de frecuencias planas para cada símbolo, consiguiendo así pasar de 2.1 MB a 1.1 MB. Un mayor ratio de compresión se puede lograr si usamos modelos como PPM o cadenas de Markov, los cuales dan para otro post.
+En mi repositorio de github se encuentra la [implementación en Rust](https://github.com/enriqueesanchz/arithmetic-coding) de este algoritmo. El ejemplo comprime "El Quijote" usando un modelo simple de frecuencias planas para cada símbolo, consiguiendo así pasar de 2.1 MB a 1.1 MB en 0.7 segundos, mientras que con la implementación ingenua esto podría tardar incluso años. 
+
+Un mayor ratio de compresión se puede lograr si usamos modelos como PPM o cadenas de Markov, los cuales dan para otro post.
 
 ### Detalles
 - Número de símbolos arbitrario: el ejemplo usa 256 para codificar un archivo leido en bytes
