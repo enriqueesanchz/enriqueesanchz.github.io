@@ -2,7 +2,7 @@
 title: Arithmetic Coding - Qué es y primera implementación
 date: 2023-09-11 18:30:00 +0100
 categories: [Algorithm, Coding]
-tags: [coding, arithmetic, optimizar, algorithm]
+tags: [coding, arithmetic, algorithm]
 ---
 <style type="text/css">
  .post-content { text-align: justify; }
@@ -30,11 +30,11 @@ Vamos a codificar/decodificar la secuencia B A C A.
 ### Codificar
 1. Lo primero que tenemos que hacer es crear una tabla (Modelo) con los símbolos que vamos a usar y sus probabilidades. En este caso tenemos 3 símbolos:
 
-| Símbolo | Probabilidad |
-|:--------|:-------------|
-| A       | 0.5          |
-| B       | 0.25         |
-| C       | 0.25         |
+| Símbolo | Probabilidad | Rango      |
+|:--------|:-------------|:-----------|
+| B       | 0.25         |[0, 0.25)   |
+| A       | 0.5          |[0.25, 0.75)|
+| C       | 0.25         |[0.75, 1)   |
 
 2. Dividimos el intervalo [0, 1) según las probabilidades de ocurrencia.
 3. Como el primer símbolo es la B, nos quedamos con el intervalo [0, 0.25).
@@ -45,6 +45,15 @@ Vamos a codificar/decodificar la secuencia B A C A.
 De esta manera, repitiendo para cada símbolo codificamos la secuencia B A C A.
 - En los intervalos mostrados se encuentran todas las secuencias con el mismo prefijo.
 - Debemos poner un símbolo de fin o indicar la longitud total del mensaje para saber cuando parar de decodificar.
+
+El pseudocódigo queda así:
+- Low = 0
+- High = 1
+- Bucle. Para cada símbolo.
+  + Rango = high - low
+  + High = low + rango *  high_range del símbolo
+  + Low = low + rango * low_range del símbolo
+
 
 ### Decodificar
 El proceso para decodificar es el mismo, gráficamente podemos ver que si nos llega el número 0.1640625 podremos identificar que pertenece al rango [0, 0.25), luego a [0.0625, 0.1875), y así hasta llegar al símbolo EOF o longitud requerida.
@@ -61,7 +70,8 @@ Existen infinidad de modelos que representen la probabilidad de símbolo:
 ## Primera implementación
 Para el trabajo de clase implementé una versión básica (e ineficiente) del algoritmo, pero que demostraba todo lo anterior. Teniendo en cuenta que usar variables de punto flotante nos limitaría los cálculos al tamaño de la mantisa, usé una librería de Python llamada "decimal", que permite usar aritmética de punto fijo con el número de bits que queramos.
 
-El problema de esto reside en que cada vez que actualizamos el número que representa el mensaje a codificar, necesitamos más bits. Más bits = más tiempo de computación en la siguiente operación matemática. Por lo tanto, conforme aumentamos la longitud del mensaje el tiempo de procesamiento aumentaba exponencialmente.
+El problema de esto reside en que cada vez que actualizamos el número que representa el mensaje a codificar, necesitamos más bits. Más bits = más tiempo de computación en la siguiente operación matemática. Por lo tanto, conforme aumentamos la longitud del mensaje el tiempo de procesamiento aumenta exponencialmente.
 
 ## Solución
 ¿Cómo solucioné esto? Pues eso es tema para el próximo post.
+- [Arithmetic Coding - Optimización del algoritmo](/posts/Arithmetic-Coding-optimization/)
