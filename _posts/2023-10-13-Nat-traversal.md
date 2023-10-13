@@ -1,6 +1,6 @@
 ---
 title: Nat traversal
-date: 2023-10-13 20:00:00 +0100
+date: 2023-10-13 20:00:00 +0200
 categories: [Nat, Traversal]
 tags: [nat, traversal, udp, hole, punching]
 ---
