@@ -10,7 +10,7 @@ tags: [nat, traversal, udp, hole, punching]
 
 Hace unas semanas mi ISP activó [CG NAT](https://es.wikipedia.org/wiki/Carrier_Grade_NAT) (Carrier Grade Network Address Translation). Esto hizo que mis servidores dejasen de estar expuestos a internet con las reglas de port-forwarding que tenía configuradas.
 
-Lejos de llamar a la operadora y pedir que lo desactiven, decidí intentar saltármela. Si las apps P2P funcionan detrás de esta NAT por qué no iba a poder yo usar estas técnicas para mis servicios.
+Lejos de llamar a la operadora y pedir que la desactiven, decidí intentar saltármela. Si las apps P2P funcionan detrás de esta NAT por qué no iba a poder yo usar estas técnicas para mis servicios.
 Así pues, me informé de como hacer NAT Traversal, UDP Hole Punching, STUN, TURN, ICE, etc. Además de servicios de "VPN p2p" como Tailscale, Zerotier... Estos resolvían mi problema, creando una red mesh entre mis dispositivos, y es lo que estuve usando.
 
 Como me encantan los retos, me propuse implementar una solución yo mismo, a partir de los conocimientos adquiridos en las técnicas mencionadas.
@@ -21,11 +21,11 @@ El "UDP Hole Punching" es una técnica usada para establecer una conexión direc
 
 Nos aprovechamos de que los firewalls generalmente permiten las conexiones salientes, por lo que para atravesarlos iniciaremos la conexión en los dos dispositivos a la vez, haciendo creer al firewall que ambas partes están iniciando el intercambio de mensajes.
 
-- Primero, el lado A inicia la conexión con un paquete UDP con dirección B. Este es rechazado puesto que el firewall B no ha visto ningún paquete saliente con dirección A.
+- Primero, el lado A inicia la conexión con un paquete UDP con destino B. Este es rechazado puesto que el firewall B no ha visto ningún paquete saliente con dirección A.
 
 ![Desktop View](/assets/img/nat-firewalls-5a.png)
 
-- Segundo, el lado B inicia la conexión con un paquete UDP con dirección A. Este sí llega a su destino puesto que A ha visto un paquete saliente con dirección B.
+- Segundo, el lado B inicia la conexión con un paquete UDP con destino A. Este sí llega correctamente puesto que A ha visto un paquete saliente con dirección B.
 
 ![Desktop View](/assets/img/nat-firewalls-5b.png)
 
@@ -49,15 +49,17 @@ Para el Hole Punching distinguimos dos tipos de NAT:
 
 Según el tipo de NAT de cada parte, distinguimos 3 casos.
 
-### EIM-EIM
+### 1. EIM-EIM
 
 Si los dos dispositivos están en el caso EIM, no hay ningún problema, se registran en el servidor de señalización y podrán establecer la conexión puesto que las parejas ip:puerto son conocidas.
 
-### EIM-EDM
+### 2. EIM-EDM
 
-Si uno de los dos dispositivos están el el caso EDM, tendremos que tratarlo de una manera especial, puesto que conocemos una pareja ip:puerto pero la otra no, puesto que va cambiando según el destino (el servidor STUN no nos puede ayudar). Haremos uso de **la paradoja del cumpleaños**.
+Si uno de los dos dispositivos están el el caso EDM, tendremos que tratarlo de una manera especial, ya que conocemos una pareja ip:puerto pero la otra va cambiando según el destino (el servidor STUN no nos puede ayudar). Haremos uso de **la paradoja del cumpleaños**.
 
-Suponiendo que la ip que nos devuelve STUN en el lado EDM es correcta (REQ-2 [RFC 4787](https://datatracker.ietf.org/doc/html/rfc4787)), lo que no conocemos es el puerto. Este será 1 entre 65.535. Si podemos probar 100 puertos/segundo, en el peor caso serán 10 minutos escaneando puertos. Pero podemos hacerlo mejor, si en vez de abrir 1 puerto entre 65.535 en el lado EDM, abrimos 256 el número de peticiones aleatorias hasta encontrar una colisión se reduce mucho. Las mates de esto se explican en [la paradoja del cumpleaños](https://en.wikipedia.org/wiki/Birthday_problem) y pueden ser comprobadas con esta [calculadora en python](https://github.com/danderson/nat-birthday-paradox).
+Suponiendo que la ip que nos devuelve STUN en el lado EDM es correcta (REQ-2 [RFC 4787](https://datatracker.ietf.org/doc/html/rfc4787)), lo que no conocemos es el puerto. Este será 1 entre 65.535. Si podemos probar 100 puertos/segundo, en el peor caso serán 10 minutos escaneando puertos. Pero podemos hacerlo mejor, si en vez de abrir 1 puerto entre 65.535 en el lado EDM, abrimos 256 el número de peticiones aleatorias hasta encontrar una colisión se reduce mucho. 
+
+Las mates de esto se explican en [la paradoja del cumpleaños](https://en.wikipedia.org/wiki/Birthday_problem) y pueden ser comprobadas con esta [calculadora en python](https://github.com/danderson/nat-birthday-paradox).
 
 | Número de pruebas | Probabilidad de éxito |
 |:------------------|:----------------------|
@@ -68,13 +70,13 @@ Suponiendo que la ip que nos devuelve STUN en el lado EDM es correcta (REQ-2 [RF
 
 Si podemos probar 100 puertos/segundo, en el peor de los casos tardaremos **20 segundos** en encontrar una colisión.
 
-### EDM-EDM
+### 3. EDM-EDM
 
 Podríamos aplicar el mismo truco que en el apartado anterior pero esta vez el espacio de búsqueda de colisión es mucho mayor por lo que con un escaneo de 100 puertos/segundo tardaríamos **28 minutos** en encontrar una colisión con un 99.9% de posibilidades. El problema reside en que los routers tienen una memoria finita, por ejemplo el Juniper SRX 300 puede almacenar un máximo de 64.000 sesiones activas. Habríamos consumido todas estas solo para iniciar una conexión, lo cual sería un completo **desastre**.
 
 Debemos abandonar esta idea de probar y obtener la colisión por fuerza bruta. Si queremos establecer una conexión EDM-EDM podemos explorar técnicas más sofisticadas como analizar el patrón que sigue la NAT para intentar adivinar qué traducción de dirección va a realizar y así conseguir la colisión.
 
-Generalmente, el no poder establecer una conexión EDM-EDM no es un problema porque las NAT de los routers de casa suelen ser EIM y quizás los de empresa puedan ser EDM, por lo que los escenarios home-to-home, home-to-office y home-to-cloud están a salvo.
+Generalmente, el no poder establecer una conexión EDM-EDM no es un problema porque las NAT de los routers de casa suelen ser EIM y quizás los de empresa sean EDM, por lo que los escenarios home-to-home, home-to-office y home-to-cloud están a salvo.
 
 ## Negociar varias NATs
 
@@ -104,7 +106,7 @@ Para este proyecto he creado un servidor de señalización de ejemplo, donde los
 
 ## Leer más
 
-Para escribir este post me he inspirado en el blog de Tailscale, muy recomendado pues describe con precisión el fundamento tecnológico tras su producto, algo que sirve para aprender mucho sobre el tema. Si se quiere seguir profundizando en el tema:
+Para escribir este post me he inspirado en el blog de Tailscale, muy recomendado pues describe con precisión el fundamento tecnológico tras su producto, algo que sirve para aprender mucho sobre el tema. Si se quiere seguir profundizando:
 
 - [How NAT Traversal works](https://tailscale.com/blog/how-nat-traversal-works/)
 - [How Tailscale works](https://tailscale.com/blog/how-tailscale-works/)
