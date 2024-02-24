@@ -2,7 +2,7 @@
 title: Nat traversal
 date: 2023-10-13 20:00:00 +0200
 categories: [Nat, Traversal]
-tags: [nat, traversal, udp, hole, punching]
+tags: [nat, traversal, udp, hole punching]
 ---
 <style type="text/css">
  .post-content { text-align: justify; }
@@ -57,7 +57,7 @@ Si los dos dispositivos están en el caso EIM, no hay ningún problema, se regis
 
 Si uno de los dos dispositivos están el el caso EDM, tendremos que tratarlo de una manera especial, ya que conocemos una pareja ip:puerto pero la otra va cambiando según el destino (el servidor STUN no nos puede ayudar). Haremos uso de **la paradoja del cumpleaños**.
 
-Suponiendo que la ip que nos devuelve STUN en el lado EDM es correcta (REQ-2 [RFC 4787](https://datatracker.ietf.org/doc/html/rfc4787)), lo que no conocemos es el puerto. Este será 1 entre 65.535. Si podemos probar 100 puertos/segundo, en el peor caso serán 10 minutos escaneando puertos. Pero podemos hacerlo mejor, si en vez de abrir 1 puerto entre 65.535 en el lado EDM, abrimos 256 el número de peticiones aleatorias hasta encontrar una colisión se reduce mucho. 
+Suponiendo que la ip que nos devuelve STUN en el lado EDM es correcta (REQ-2 [RFC 4787](https://datatracker.ietf.org/doc/html/rfc4787)), lo que no conocemos es el puerto. Este será 1 entre 65.535. Si podemos probar 100 puertos/segundo, en el peor caso serán 10 minutos escaneando puertos. Pero podemos hacerlo mejor, si en vez de abrir 1 puerto entre 65.535 en el lado EDM, abrimos 256 el número de peticiones aleatorias hasta encontrar una colisión se reduce mucho.
 
 Las mates de esto se explican en [la paradoja del cumpleaños](https://en.wikipedia.org/wiki/Birthday_problem) y pueden ser comprobadas con esta [calculadora en python](https://github.com/danderson/nat-birthday-paradox).
 
