@@ -124,4 +124,4 @@ En un futuro escribiré sobre el resto de problemas a resolver de la aplicación
 - Número de series
 - Peso
 
-Tanto los datos como el código (Jupyter Notebooks) están disponibles en mi [Repositorio de Gitub](https://github.com/enriqueesanchz/workoutAI).
+Tanto los datos como el código (Jupyter Notebooks) están disponibles en mi [Repositorio de Github](https://github.com/enriqueesanchz/workoutAI).
